@@ -32,16 +32,14 @@ pip install numpy skyfield astropy fastapi uvicorn
 
 Для запуска веб-сервера выполните следующую команду:
 
-uvicorn main:app --reload
+uvicorn app_terminator:app --reload
 
 
-где main — это имя вашего файла с кодом приложения, а app — экземпляр FastAPI.
+где app_terminator — это имя вашего файла с кодом приложения, а app — экземпляр FastAPI.
 
 ## Использование API
 
-### Эндпоинт
-
-**POST /calculate_terminator**
+**POST /get_coordinates**
 
 #### Описание
 
@@ -52,11 +50,11 @@ uvicorn main:app --reload
 **Тело запроса:**
 
 {
-    "datetime": "2023-10-01T12:00:00Z"
+    "datetime": "2023-10-01 12-00-00"
 }
 
 
-- datetime: строка, представляющая дату и время в формате ISO 8601.
+- datetime: строка, представляющая дату и время.
 
 #### Ответ
 
@@ -85,7 +83,7 @@ uvicorn main:app --reload
 
 ### Пример запроса с использованием cURL
 
-curl -X POST "http://localhost:8000/calculate_terminator" \
+curl -X POST "http://localhost:8000/get_coordinates" \
 -H "Content-Type: application/json" \
 -d '{"datetime": "2023-10-01T12:00:00Z"}'
 
