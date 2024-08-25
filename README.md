@@ -1,5 +1,5 @@
 # sun_terminator
-calculation of the coordinates of the solar terminator
+The calculation of coordinates of the solar terminator
 
 ## Введение
 
@@ -32,10 +32,10 @@ pip install numpy skyfield astropy fastapi uvicorn
 
 Для запуска веб-сервера выполните следующую команду:
 
-uvicorn app_terminator:app --reload
+python app_terminator.py
 
 
-где app_terminator — это имя вашего файла с кодом приложения, а app — экземпляр FastAPI.
+где app_terminator — это имя вашего файла с кодом приложения.
 
 ## Использование API
 
@@ -43,7 +43,7 @@ uvicorn app_terminator:app --reload
 
 #### Описание
 
-Этот эндпоинт принимает дату и время в формате ISO 8601 и возвращает двумерный массив с координатами терминатора в формате широта-долгота.
+Этот эндпоинт принимает дату и время, переводит в формат ISO 8601 и возвращает двумерный массив с координатами терминатора в формате широта-долгота.
 
 #### Запрос
 
@@ -83,7 +83,7 @@ uvicorn app_terminator:app --reload
 
 ### Пример запроса с использованием cURL
 
-curl -X POST "http://localhost:8000/get_coordinates" \
+curl -X POST "http://localhost:8000/docs/get_coordinates" \
 -H "Content-Type: application/json" \
 -d '{"datetime": "2023-10-01T12:00:00Z"}'
 
