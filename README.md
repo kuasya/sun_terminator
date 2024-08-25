@@ -50,7 +50,7 @@ python app_terminator.py
 **Тело запроса:**
 
 {
-    "datetime": "2023-10-01 12-00-00"
+    "datetime": "2024-07-31 12-00-00"
 }
 
 
@@ -85,7 +85,7 @@ python app_terminator.py
 
 curl -X POST "http://localhost:8000/docs/get_coordinates" \
 -H "Content-Type: application/json" \
--d '{"datetime": "2023-10-01T12:00:00Z"}'
+-d '{"datetime": "2024-07-31T12:00:00Z"}'
 
 
 ## Алгоритм вычисления координат терминатора
